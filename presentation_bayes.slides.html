@@ -7655,7 +7655,7 @@ cpd_k:
 
   <span class="k">return</span> <span class="n">data_exfiltration_prob</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
-<p>The conditional probability when advanced hacking tools are unavailable is <code>~0.2912</code>.</p>
+<p>The conditional probability when advanced hacking tools are unavailable is approximately <code>0.2912</code>.</p>
 <hr/>
 <h3 id="Conditional-Probability-of-Data-Exfiltration-Given-No-Hacking-Tools-and-Team-Ready"><strong>Conditional Probability of Data Exfiltration Given No Hacking Tools and Team Ready</strong><a class="anchor-link" href="#Conditional-Probability-of-Data-Exfiltration-Given-No-Hacking-Tools-and-Team-Ready">¶</a></h3><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_conditional_data_exfiltration_given_no_tools_and_team_ready</span><span class="p">(</span><span class="n">bayes_net</span><span class="p">):</span>
 <span class="w">  </span><span class="sd">"""Calculate the conditional probability that sensitive customer data is exfiltrated,</span>
@@ -7668,42 +7668,7 @@ cpd_k:
 
   <span class="k">return</span> <span class="n">data_exfiltration_prob</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
-<p>The caclulated conditional probability, with hacking tools unavailable and the cybersecurity team ready, is  <code>~0.3395</code>.</p>
-<p>Click ↓ to see the code print out.</p>
-</div>
-</div>
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dbf2aa3f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">bayes_net</span> <span class="o">=</span> <span class="n">make_security_system_net</span><span class="p">()</span>
-<span class="n">set_probability</span><span class="p">(</span><span class="n">bayes_net</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">get_marginal_data_exfiltration</span><span class="p">(</span><span class="n">bayes_net</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">get_conditional_data_exfiltration_given_no_tools</span><span class="p">(</span><span class="n">bayes_net</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">get_conditional_data_exfiltration_given_no_tools_and_team_ready</span><span class="p">(</span><span class="n">bayes_net</span><span class="p">))</span>   
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0.3210916999999999
-0.291164
-0.33953199999999994
-</pre>
-</div>
+<p>The caclulated conditional probability, with hacking tools unavailable and the cybersecurity team ready, is approximately <code>0.3395</code>.</p>
 </div>
 </div>
 </div>
@@ -8248,7 +8213,6 @@ The following Python function, <code>MH_sampler</code>, performs a single iterat
 
     <span class="k">return</span> <span class="n">Gibbs_convergence</span><span class="p">,</span> <span class="n">MH_convergence</span><span class="p">,</span> <span class="n">Gibbs_count</span><span class="p">,</span> <span class="n">MH_count</span><span class="p">,</span> <span class="n">MH_rejection_count</span>
 </pre></div>
-<p>Click ↓ to see the code print out.</p>
 <h3 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h3><ul>
 <li><strong>Gibbs Sampling Posterior Distribution:</strong> $[0.258376, 0.425994, 0.31563]$</li>
 <li><strong>Metropolis-Hastings Posterior Distribution:</strong> $[0.259752, 0.427894, 0.312354]$</li>
@@ -8268,40 +8232,6 @@ The following Python function, <code>MH_sampler</code>, performs a single iterat
 </ul>
 <p>Both sampling methods approximate the true posterior well, but Gibbs sampling shows a slightly closer match to the exact inference result, which is corroborated by its faster convergence and lower computational cost in this scenario.</p>
 <h3 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h3><p>The comparative analysis demonstrates that both Gibbs and Metropolis-Hastings sampling methods are effective for approximating posterior distributions within Bayesian networks. In the context of our specific hedging strategy project, both sampling methods exhibited similar convergence speeds. This could be due to the lack of high dimensionality for our problem. However, for more complex applications it is important to monitor different  metrics such as rejection rates and convergence speed to evaluate each method and choose the most appropriate technique based on the observed performance and project requirements.</p>
-</div>
-</div>
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0ae1534d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Note: With each re-run the results might slightly differ from the project report</span>
-<span class="n">net</span> <span class="o">=</span> <span class="n">get_game_network</span><span class="p">()</span>
-<span class="n">inference_post</span> <span class="o">=</span> <span class="n">calculate_posterior</span><span class="p">(</span><span class="n">net</span><span class="p">)</span>
-<span class="n">results_compare</span> <span class="o">=</span> <span class="n">compare_sampling</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="p">[])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Inference Posterior: "</span><span class="p">,</span> <span class="n">inference_post</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Gibbs vs MH: "</span><span class="p">,</span> <span class="n">results_compare</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Inference Posterior:  [0.25890074 0.42796763 0.31313163]
-Gibbs vs MH:  ([0.25999, 0.427164, 0.312846], [0.26029, 0.423896, 0.315814], 24443, 24185, 19055)
-</pre>
-</div>
 </div>
 </div>
 </div>
